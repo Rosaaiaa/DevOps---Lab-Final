@@ -12,7 +12,7 @@ jobs:
         uses: docker/setup-compose-action@v1
 
       - name: Build Imagem Docker
-        run: docker-compose up
+        run: docker compose up
 
   testes: 
     runs-on: ubuntu-latest
@@ -23,7 +23,7 @@ jobs:
         uses: docker/setup-compose-action@v1
       
       - name: Comando de testes
-        run: docker-compose run api python -m unittest discover
+        run: docker compose run api python -m unittest discover
 
   deploy:
     runs-on: ubuntu-latest
